@@ -5,3 +5,6 @@ work/
 .nextflow.log*
 data/
 results/
+.vscode/
+.idea/
+.DS_Store/
