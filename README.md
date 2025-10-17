@@ -1,10 +1,10 @@
-# Automated EEG Power Spectral Density Pipeline
+## Automated EEG Power Spectral Density Pipeline
 
-## Description
+### Description
 
 This project implements an automated, multi-stage pipeline to process raw EEG data from the [EEG Motor Movement/Imagery Dataset](https://physionet.org/content/eegmmidb/1.0.0/). The pipeline converts `.edf` files, filters the data, creates epochs based on event annotations (T0, T1, T2), calculates the Power Spectral Density (PSD), then generates summary plots and an HTML report. The entire pipeline is run using Nextflow and containerized with Docker.
 
-## Key Features
+### Key Features
 
 * **Automated processing:** Handles multiple `.edf` files automatically.
 * **Standard EEG workflow:** Includes filtering and epoching steps using the MNE-Python library.
@@ -15,7 +15,7 @@ This project implements an automated, multi-stage pipeline to process raw EEG da
 * **HTML report:** Generates an HTML file summarizing the run and visualizing all PSD plots for easy viewing.
 * **Unit tested:** Includes unit tests using `pytest` to verify core code components.
 
-## Tech Stack
+### Tech Stack
 
 * **Workflow:** Nextflow
 * **Containerization:** Docker
@@ -23,7 +23,7 @@ This project implements an automated, multi-stage pipeline to process raw EEG da
 * **Core libraries:** MNE-Python, Matplotlib, NumPy
 * **Testing:** Pytest
 
-## Setup
+### Setup
 
 1.  **Clone the repository:**
     ```bash
@@ -36,7 +36,7 @@ This project implements an automated, multi-stage pipeline to process raw EEG da
     docker build -t eeg-pipeline .
     ```
 
-## Usage
+### Usage
 
 1.  **Prepare input data:** Place your raw `.edf` files inside the `data/` directory within the project folder.
 2.  **Create output directory:** Ensure an empty directory named `results/` exists in the project folder.
@@ -62,7 +62,8 @@ This project implements an automated, multi-stage pipeline to process raw EEG da
         ```
     * Other parameters (like `low_freq`, `high_freq`) can be changed in the `nextflow.config` file before building the Docker image.
 
-## Project Structure
+### Project Structure
+\'\'\'
 eeg-pipeline/
 ├── bin/ # Python scripts
 │ ├── convert_to_fif.py
@@ -81,3 +82,4 @@ eeg-pipeline/
 ├── pytest.ini # Pytest configuration
 ├── README.md
 └── requirements.txt
+\'\'\'
