@@ -3,6 +3,7 @@ __pycache__/
 .venv/
 work/
 .nextflow.log*
+.nextflow/
 data/
 results/
 .vscode/
