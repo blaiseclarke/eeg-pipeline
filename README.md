@@ -63,7 +63,7 @@ This project implements an automated, multi-stage pipeline to process raw EEG da
     * Other parameters (like `low_freq`, `high_freq`) can be changed in the `nextflow.config` file before building the Docker image.
 
 ### Project Structure
-\'\'\'
+```
 eeg-pipeline/
 ├── bin/ # Python scripts
 │ ├── convert_to_fif.py
@@ -82,4 +82,4 @@ eeg-pipeline/
 ├── pytest.ini # Pytest configuration
 ├── README.md
 └── requirements.txt
-\'\'\'
+```
