@@ -50,7 +50,7 @@ process EPOCH_DATA {
     path filtered_fif_file
 
     output:
-    path "${filtered_fif_file.baseName}-epo.fif"
+    path "${filtered_fif_file.baseName}-epo.fif", optional: true
 
     script:
     """

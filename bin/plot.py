@@ -3,13 +3,17 @@ import argparse
 import mne
 import matplotlib.pyplot as plt
 import numpy as np
+try:
+    import utils
+except ImportError:
+    from bin import utils
 
 
 def generate_psd_plot(input_path: str, output_path: str, pick: str):
     print(f"Loading epochs from {input_path}...")
     epochs = mne.read_epochs(input_path, verbose=False)
 
-    epochs.event_id = {"T0": 0, "T1": 1, "T2": 2}
+    epochs.event_id = utils.EVENT_ID_MAP
 
     # Plotting logic
     fig, ax = plt.subplots()

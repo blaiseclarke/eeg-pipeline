@@ -2,6 +2,11 @@
 import mne
 import argparse
 import sys
+try:
+    import utils
+except ImportError:
+    # Fallback for when running from root without bin in pythonpath
+    from bin import utils
 
 
 def create_epochs(input_path: str, output_path: str):
@@ -9,7 +14,7 @@ def create_epochs(input_path: str, output_path: str):
     raw = mne.io.read_raw_fif(input_path, preload=True, verbose=False)
 
     print("Extracting all available events (T0, T1, T2)...")
-    annotation_map = {"T0": 0, "T1": 1, "T2": 2}
+    annotation_map = utils.EVENT_ID_MAP
 
     try:
         events, event_id = mne.events_from_annotations(raw, event_id=annotation_map)
